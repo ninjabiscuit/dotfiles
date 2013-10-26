@@ -1,4 +1,119 @@
+" enable all features
+set nocompatible
+
+set autoread
+
+set noswapfile
+
+set lazyredraw
+
+" Wrap too long lines
+set wrap
+set lbr " wrap by word
+set display=lastline " show partial lines
+
+" Tabs are 2 characters
+set tabstop=2
+
+" (Auto)indent uses 2 characters
+set shiftwidth=2
+
+" spaces instead of tabs
+set expandtab
+
+" guess indentation
+set autoindent
+set copyindent
+set preserveindent
+
+" Expand the command line using tab
+set wildchar=<Tab>
+
+" show line numbers
+set number
+
+set ignorecase
+set smartcase
+
+" Fold using markers {{{
+" like this
+" }}}
+set foldmethod=marker
+
+" powerful backspaces
+set backspace=indent,eol,start
+
+" highlight the searchterms
+set hlsearch
+
+" jump to the matches while typing
+set incsearch
+
+" don't wrap words
+set textwidth=0
+
+" history
+set history=50
+
+" 1000 undo levels
+set undolevels=1000
+
+" show partial commands
+set showcmd
+
+" show matching braces
+set showmatch
+
+" don't leave backup files lying around after vim has closed
+set nobackup
+" workaround for `crontab -e` not working
+set backupskip=/tmp/*,/private/tmp/*
+
+" hide buffers rather than closing them
+set hidden
+
+" ignore some more uneditable files
+set wildignore+=.git,.svn,*.pyc,*.o,*.beam
+set wildignore+=*.png,*.mng,*.jpg,*.jpeg,*.gif,*.bmp,*.pdf,*.class,*.hi,tmp/**
+
+if v:version >= 703
+  " VIM 7.3 stuff
+
+  " persistent undo
+  set undofile
+  set undodir=~/.vimundo
+endif
+
+" filetype detecting and syntax highlighting
+filetype off
+filetype plugin indent on
 syntax on
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+if has("gui_running")
+  set columns=85
+  set lines=55
+endif
+
+" highlight the 80th column
+set colorcolumn=80
+
+" GVIM stuff
+set guioptions-=T " no toolbar
+set guioptions-=m " no menu
+" on separate lines due to MacVim bug:
+set guioptions-=r " no right scrollbar
+set guioptions-=l " no left scrollbar
+set guioptions-=L " also no left scrollbar
+set guioptions-=b " no bottom scrollbar
+
+" disable cursor keys: use hjkl instead ;)
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
+
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
