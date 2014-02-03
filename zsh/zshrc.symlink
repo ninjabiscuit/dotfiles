@@ -41,3 +41,9 @@ unset config_files
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export RBENV_ROOT=/usr/local/var/rbenv
+
+#export PATH="/usr/local/opt/rbenv/bin:$PATH"
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
