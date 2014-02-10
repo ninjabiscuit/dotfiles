@@ -87,7 +87,6 @@ endif
 " filetype detecting and syntax highlighting
 filetype off
 filetype plugin indent on
-syntax on
 
 if has("gui_running")
   set columns=85
@@ -116,4 +115,8 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
+execute pathogen#infect()
+
+syntax enable
+set background=dark
+colorscheme solarized

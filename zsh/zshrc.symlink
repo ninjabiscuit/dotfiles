@@ -45,3 +45,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
+
+export RBENV_ROOT=/usr/local/var/rbenv
+
+source $HOME/.zshenv
