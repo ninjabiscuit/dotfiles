@@ -7,6 +7,9 @@ set noswapfile
 
 set lazyredraw
 
+source ~/.dotfiles/vim/autoload/pathogen.vim
+execute pathogen#infect('bundle/{}', '~/.dotfiles/vim/bundle/{}')
+
 " Wrap too long lines
 set wrap
 set lbr " wrap by word
@@ -117,3 +120,9 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+let NERDTreeShowHidden=1
+nmap <Leader>d :NERDTreeToggle<CR>
+nmap <Leader>t :CtrlP<CR>
+nmap <Leader>h :nohl<CR>
+
