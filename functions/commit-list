@@ -1,0 +1,3 @@
+commit-list() {
+  git log --pretty="%h - %s (%an)" $1..${2:=HEAD};
+}

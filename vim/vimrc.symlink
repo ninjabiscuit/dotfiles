@@ -90,7 +90,7 @@ endif
 " filetype detecting and syntax highlighting
 filetype off
 filetype plugin indent on
-syntax on
+syntax enable 
 
 if has("gui_running")
   set columns=85
@@ -126,3 +126,5 @@ nmap <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>t :CtrlP<CR>
 nmap <Leader>h :nohl<CR>
 
+set background=dark
+colorscheme solarized
