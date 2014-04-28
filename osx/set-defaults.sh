@@ -183,3 +183,6 @@ defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Next Tab"         
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Previous Tab"        "@~\U2190"
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Show Next Tab"       "@~\U2192"
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Show Previous Tab"   "@~\U2190"
+
+# Make the caps lock key act as control
+osascript ~/.dotfiles/osx/capslock-to-control.scpt
