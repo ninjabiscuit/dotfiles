@@ -1,6 +1,10 @@
 " enable all features
 set nocompatible
 
+let mapleader=" "
+
+set mouse=a
+
 set autoread
 
 set noswapfile
@@ -91,6 +95,8 @@ endif
 filetype off
 filetype plugin indent on
 
+syntax enable
+
 if has("gui_running")
   set columns=85
   set lines=55
@@ -108,16 +114,6 @@ set guioptions-=l " no left scrollbar
 set guioptions-=L " also no left scrollbar
 set guioptions-=b " no bottom scrollbar
 
-" disable cursor keys: use hjkl instead ;)
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
-
 syntax enable
 set background=dark
 colorscheme solarized
@@ -128,3 +124,7 @@ let NERDTreeShowHidden=1
 nmap <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>t :CtrlP<CR>
 nmap <Leader>h :nohl<CR>
+
+set clipboard=unnamed
+set background=dark
+colorscheme solarized

@@ -12,6 +12,7 @@ alias clients='cd ~/Sites/clients/'
 alias dotcom='cd ~/Sites/clients/itv/dotcom/'
 alias nsw='cd ~/Sites/clients/itv/nsw/'
 alias elasticsearch-head='browse ~/src/elasticsearch-head/index.html'
+alias find-process='ps ax | grep $1'
 
 #imagemagick
 #alias 256colour='-quantize RGB -alpha off -dither None -colors 256 -alpha on'
