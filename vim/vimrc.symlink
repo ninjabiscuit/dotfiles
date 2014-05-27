@@ -3,8 +3,6 @@ set nocompatible
 
 let mapleader=" "
 
-set mouse=a
-
 set autoread
 
 set noswapfile
@@ -105,26 +103,69 @@ endif
 " highlight the 80th column
 set colorcolumn=80
 
-" GVIM stuff
-set guioptions-=T " no toolbar
-set guioptions-=m " no menu
-" on separate lines due to MacVim bug:
-set guioptions-=r " no right scrollbar
-set guioptions-=l " no left scrollbar
-set guioptions-=L " also no left scrollbar
-set guioptions-=b " no bottom scrollbar
-
 syntax enable
-set background=dark
-colorscheme solarized
-
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
+"" Whitespace
+set nowrap
+set tabstop=2 shiftwidth=2
+set expandtab
+set backspace=indent,eol,start
+set list
+set listchars=tab:▸\ ,trail:•,extends:❯,precedes:❮
+
+"" Terminal
+set mouse=a
+
 let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
+
 nmap <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>t :CtrlP<CR>
 nmap <Leader>h :nohl<CR>
 
 set clipboard=unnamed
+
 set background=dark
-colorscheme solarized
+colorscheme railscasts-theme
+
+highlight clear SignColumn
+highlight VertSplit    ctermbg=236
+highlight ColorColumn  ctermbg=237
+highlight LineNr       ctermbg=236 ctermfg=240
+highlight CursorLineNr ctermbg=236 ctermfg=240
+highlight CursorLine   ctermbg=236
+highlight StatusLineNC ctermbg=238 ctermfg=0
+highlight StatusLine   ctermbg=240 ctermfg=12
+highlight IncSearch    ctermbg=0   ctermfg=3
+highlight Search       ctermbg=0   ctermfg=9
+highlight Visual       ctermbg=3   ctermfg=0
+highlight Pmenu        ctermbg=240 ctermfg=12
+highlight PmenuSel     ctermbg=0   ctermfg=3
+highlight SpellBad     ctermbg=0   ctermfg=1
+
+set splitright
+set splitbelow
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"" fix problem with esc key delay?
+"set noesckeys
+"noremap <Esc> <Esc>
+
+" reload vimrc if changed
+augroup myvimrc
+  au!
+  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | endif
+augroup END
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+set laststatus=2
+
+set encoding=utf-8

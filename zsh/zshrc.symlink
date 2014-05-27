@@ -44,10 +44,15 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH=/Users/andrewwalker/Development/adt-bundle-mac-x86_64-20131030/sdk/tools:/Users/andrewwalker/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:$PATH
 
-unalias run-help
-autoload run-help
-HELPDIR=/usr/local/share/zsh/helpfiles
+# unalias run-help
+# autoload run-help
+# HELPDIR=/usr/local/share/zsh/helpfiles
 
 export RBENV_ROOT=/usr/local/var/rbenv
 
 source $HOME/.zshenv
+
+setopt INC_APPEND_HISTORY
+
+#source ./plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ./plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
