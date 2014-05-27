@@ -1,4 +1,4 @@
-# my does dotfiles
+# my dotfiles
 
 ## install
 
