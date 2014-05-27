@@ -54,7 +54,7 @@ bind \ split-window -h # Split panes horizontal
 bind - split-window -v # Split panes vertically
 
 unbind r
-nd r source-file ~/.tmux.conf
+bind r source-file ~/.tmux.conf
 
 # switch to last pane
 bind-key C-a last-pane

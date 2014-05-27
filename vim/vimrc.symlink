@@ -103,7 +103,6 @@ endif
 " highlight the 80th column
 set colorcolumn=80
 
-syntax enable
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 "" Whitespace
