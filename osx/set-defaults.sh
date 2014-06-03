@@ -76,7 +76,7 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 systemsetup -settimezone "Europe/London" > /dev/null
 
 # Stop iTunes from responding to the keyboard media keys
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
@@ -183,3 +183,6 @@ defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Next Tab"         
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Previous Tab"        "@~\U2190"
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Show Next Tab"       "@~\U2192"
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Show Previous Tab"   "@~\U2190"
+
+# Make the caps lock key act as control
+osascript ~/.dotfiles/osx/capslock-to-control.scpt

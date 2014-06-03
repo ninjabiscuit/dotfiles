@@ -92,7 +92,8 @@ endif
 " filetype detecting and syntax highlighting
 filetype off
 filetype plugin indent on
-syntax enable 
+
+syntax enable
 
 if has("gui_running")
   set columns=85
@@ -116,12 +117,13 @@ set listchars=tab:▸\ ,trail:•,extends:❯,precedes:❮
 set mouse=a
 
 let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
+
 nmap <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>t :CtrlP<CR>
 nmap <Leader>h :nohl<CR>
 
-"" set background=dark
-"" colorscheme solarized
+set clipboard=unnamed
 
 set background=dark
 colorscheme railscasts-theme
@@ -148,3 +150,21 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+"" fix problem with esc key delay?
+"set noesckeys
+"noremap <Esc> <Esc>
+
+" reload vimrc if changed
+augroup myvimrc
+  au!
+  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | endif
+augroup END
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+set laststatus=2
+
+set encoding=utf-8

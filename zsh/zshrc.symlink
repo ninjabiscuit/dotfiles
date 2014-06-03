@@ -42,8 +42,17 @@ unset config_files
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+export PATH=/Users/andrewwalker/Development/adt-bundle-mac-x86_64-20131030/sdk/tools:/Users/andrewwalker/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:$PATH
+
+# unalias run-help
+# autoload run-help
+# HELPDIR=/usr/local/share/zsh/helpfiles
+
 export RBENV_ROOT=/usr/local/var/rbenv
 
-#export PATH="/usr/local/opt/rbenv/bin:$PATH"
+source $HOME/.zshenv
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+setopt INC_APPEND_HISTORY
+
+#source ./plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ./plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
