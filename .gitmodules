@@ -43,9 +43,9 @@
 [submodule "vim/bundle/neomru.vim"]
 	path = vim/bundle/neomru.vim
 	url = https://github.com/Shougo/neomru.vim.git
-[submodule "vim/bundle/jshint.vim"]
-	path = vim/bundle/jshint.vim
-	url = https://github.com/wookiehangover/jshint.vim.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
