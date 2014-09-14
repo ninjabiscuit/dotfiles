@@ -56,3 +56,31 @@ setopt INC_APPEND_HISTORY
 
 #source ./plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #source ./plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+#export PROMPT_COMMAND=long-command-alert
+#trap '[ -z ${LAST_COMMAND_TIME} ] && export LAST_COMMAND_TIME=$(date +%s)' DEBUG
+
+preexec () {
+    # Note the date when the command started, in unix time.
+    CMD_START_DATE=$(date +%s)
+    # Store the command that we're running.
+    CMD_NAME=$1
+}
+precmd () {
+    # Proceed only if we've ran a command in the current shell.
+    if ! [[ -z $CMD_START_DATE ]]; then
+        # Note current date in unix time
+        CMD_END_DATE=$(date +%s)
+        # Store the difference between the last command start date vs. current date.
+        CMD_ELAPSED_TIME=$(($CMD_END_DATE - $CMD_START_DATE))
+        # Store an arbitrary threshold, in seconds.
+        CMD_NOTIFY_THRESHOLD=30
+
+        if [[ $CMD_ELAPSED_TIME -gt $CMD_NOTIFY_THRESHOLD ]]; then
+            # Beep or visual bell if the elapsed time (in seconds) is greater than threshold
+            afplay ~/Dropbox\ \(Personal\)/program-complete.wav -v 2
+            # Send a notification
+            growlnotify -t "Program complete" -m "\"$CMD_NAME\" finished in $CMD_ELAPSED_TIME seconds."
+        fi
+    fi
+}
