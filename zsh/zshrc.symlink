@@ -53,6 +53,7 @@ export RBENV_ROOT=/usr/local/var/rbenv
 source $HOME/.zshenv
 
 setopt INC_APPEND_HISTORY
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 #source ./plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #source ./plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
