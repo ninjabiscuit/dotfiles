@@ -78,7 +78,7 @@ precmd () {
 
         if [[ $CMD_ELAPSED_TIME -gt $CMD_NOTIFY_THRESHOLD ]]; then
             # Beep or visual bell if the elapsed time (in seconds) is greater than threshold
-            afplay ~/Dropbox\ \(Personal\)/program-complete.wav -v 2
+            afplay ~/.dotfiles/media/program-complete.wav -v 2
             # Send a notification
             growlnotify -t "Program complete" -m "\"$CMD_NAME\" finished in $CMD_ELAPSED_TIME seconds."
         fi
