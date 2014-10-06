@@ -1,8 +1,8 @@
 update
 upgrade
-brew tap caskroom/cask
-brew tap homebrew/dupes
-brew tap madebymany/custom
+tap caskroom/cask
+tap homebrew/dupes
+tap madebymany/custom
 install ack
 install ant
 install appalling
@@ -16,7 +16,6 @@ install cmake
 install coreutils
 install cscope
 install dirmngr
-install elasticsearch
 install faac
 install ffmpeg
 install freetype
@@ -38,7 +37,6 @@ install lame
 install libassuan
 install libav
 install libevent
-install libfreenect
 install libgcrypt
 install libgpg-error
 install libksba
@@ -47,7 +45,6 @@ install libtiff
 install libtool
 install libusb
 install libusb-compat
-install libusb-freenect
 install libxml2
 install libxslt
 install libyaml
@@ -92,4 +89,7 @@ install xvid
 install xz
 install yasm
 install zsh
+cask install google-chrome
+cask install iterm2
+cask install xquartz
 cleanup

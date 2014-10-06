@@ -120,8 +120,16 @@ install_dotfiles () {
   done
 }
 
+install_powerline () {
+  info "installing powerline"
+  pip install --user git+git://github.com/Lokaltog/powerline
+  rsync --exclude ".DS_Store" -av --no-perms fonts/ ~/Library/Fonts/
+  link_files ./powerline ~/.config/powerline
+}
+
 setup_gitconfig
 install_dotfiles
+install_powerline
 
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]

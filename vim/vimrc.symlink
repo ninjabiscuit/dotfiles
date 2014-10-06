@@ -125,7 +125,7 @@ nmap <Leader>h :nohl<CR>
 set clipboard+=unnamed
 
 set background=dark
-colorscheme railscasts-theme
+colorscheme Tomorrow-Night
 
 highlight clear SignColumn
 highlight VertSplit    ctermbg=236
@@ -160,6 +160,7 @@ augroup myvimrc
   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | endif
 augroup END
 
+python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages/")
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
