@@ -93,3 +93,249 @@ cask install google-chrome
 cask install iterm2
 cask install xquartz
 cleanup
+update
+upgrade
+tap caskroom/cask
+tap homebrew/dupes
+tap madebymany/custom
+install ack
+install ant
+install appalling
+install apple-gcc42
+install autoconf
+install autojump
+install automake
+install bison
+install boost
+install brew-cask
+install cairo
+install cmake
+install coreutils
+install cscope
+install dirmngr
+install elasticsearch
+install faac
+install ffmpeg
+install fontconfig
+install fontforge
+install freetype
+install gdbm
+install gettext
+install gifsicle
+install git
+install glew
+install glib
+install glm
+install gnu-getopt
+install gnupg2
+install gobject-introspection
+install gource
+install gpg-agent
+install grc
+install harfbuzz
+install icu4c
+install imagemagick
+install jasper
+install jpeg
+install jq
+install lame
+install libassuan
+install libav
+install libevent
+install libffi
+install libfreenect
+install libgcrypt
+install libgpg-error
+install libksba
+install libpng
+install libtiff
+install libtool
+install libusb
+install libusb-compat
+install libxml2
+install libxslt
+install libyaml
+install little-cms
+install macvim
+install mad
+install mercurial
+install moltar
+install mongodb
+install mysql
+install node
+install openssl
+install ossp-uuid
+install pango
+install pass
+install pcre
+install phantomjs
+install pidof
+install pinentry
+install pixman
+install pkg-config
+install pngquant
+install postgresql
+install pow
+install pth
+install pwgen
+install python
+install rbenv
+install rbenv-default-gems
+install rbenv-gem-rehash
+install readline
+install reattach-to-user-namespace
+install redis
+install ruby-build
+install sdl
+install sdl2
+install sdl2_image
+install sdl_image
+install siege
+install sox
+install spark
+install sqlite
+install texi2html
+install tmux
+install tree
+install vim
+install webp
+install wget
+install x264
+install xvid
+install xz
+install yasm
+install zsh
+cask install audacity
+cask install firefox
+cask install google-chrome
+cask install google-drive
+cask install imageoptim
+cask install java
+cask install sequel-pro
+cask install spotify
+cask install steam
+cask install xquartz
+cleanup
+update
+upgrade
+tap caskroom/cask
+tap homebrew/dupes
+tap madebymany/custom
+install ack
+install ant
+install appalling
+install apple-gcc42
+install autoconf
+install autojump
+install automake
+install bison
+install boost
+install brew-cask
+install cairo
+install cmake
+install coreutils
+install cscope
+install dirmngr
+install elasticsearch
+install faac
+install ffmpeg
+install fontconfig
+install fontforge
+install freetype
+install gdbm
+install gettext
+install gifsicle
+install git
+install glew
+install glib
+install glm
+install gnu-getopt
+install gnupg2
+install gobject-introspection
+install gource
+install gpg-agent
+install grc
+install harfbuzz
+install icu4c
+install imagemagick
+install jasper
+install jpeg
+install jq
+install lame
+install libassuan
+install libav
+install libevent
+install libffi
+install libfreenect
+install libgcrypt
+install libgpg-error
+install libksba
+install libpng
+install libtiff
+install libtool
+install libusb
+install libusb-compat
+install libxml2
+install libxslt
+install libyaml
+install little-cms
+install macvim
+install mad
+install mercurial
+install moltar
+install mongodb
+install mysql
+install node
+install openssl
+install ossp-uuid
+install pango
+install pass
+install pcre
+install phantomjs
+install pidof
+install pinentry
+install pixman
+install pkg-config
+install pngquant
+install postgresql
+install pow
+install pth
+install pwgen
+install python
+install rbenv
+install rbenv-default-gems
+install rbenv-gem-rehash
+install readline
+install reattach-to-user-namespace
+install redis
+install ruby-build
+install sdl
+install sdl2
+install sdl2_image
+install sdl_image
+install siege
+install sox
+install spark
+install sqlite
+install texi2html
+install tmux
+install tree
+install vim
+install webp
+install wget
+install x264
+install xvid
+install xz
+install yasm
+install zsh
+cask install audacity
+cask install firefox
+cask install google-chrome
+cask install google-drive
+cask install imageoptim
+cask install java
+cask install sequel-pro
+cask install spotify
+cask install steam
+cask install xquartz
+cleanup

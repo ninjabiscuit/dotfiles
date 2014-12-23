@@ -118,6 +118,7 @@ set mouse=a
 
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
+let g:ragtag_global_maps = 1 
 
 nmap <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>h :nohl<CR>

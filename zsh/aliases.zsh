@@ -9,8 +9,6 @@ alias browse='open -a "Google Chrome"'
 
 #directories
 alias clients='cd ~/Sites/clients/'
-alias dotcom='cd ~/Sites/clients/itv/dotcom/'
-alias nsw='cd ~/Sites/clients/itv/nsw/'
 alias elasticsearch-head='browse ~/src/elasticsearch-head/index.html'
 alias find-process='ps ax | grep $1'
 alias chrome-without-cors='open -a Google\ Chrome\ Canary --args --disable-web-security'
