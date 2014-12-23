@@ -14,5 +14,6 @@ alias nsw='cd ~/Sites/clients/itv/nsw/'
 alias elasticsearch-head='browse ~/src/elasticsearch-head/index.html'
 alias find-process='ps ax | grep $1'
 alias chrome-without-cors='open -a Google\ Chrome\ Canary --args --disable-web-security'
+alias -g sd='; afplay ~/Dropbox\ \(Personal\)/program-complete.wav'
 #imagemagick
 #alias 256colour='-quantize RGB -alpha off -dither None -colors 256 -alpha on'
