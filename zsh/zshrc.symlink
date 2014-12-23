@@ -42,22 +42,21 @@ unset config_files
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export PATH=/Users/andrewwalker/Development/adt-bundle-mac-x86_64-20131030/sdk/tools:/Users/andrewwalker/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:$PATH
-export PATH="/usr/local/opt/rbenv/shims:/usr/local/opt/rbenv/bin:$PATH"
+export PATH=$HOME/Development/adt-bundle-mac-x86_64-20131030/sdk/tools:$HOME/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:$PATH
+export PATH=/usr/local/opt/rbenv/shims:/usr/local/opt/rbenv/bin:$PATH
 
 # unalias run-help
 # autoload run-help
 # HELPDIR=/usr/local/share/zsh/helpfiles
 
 export RBENV_ROOT=/usr/local/var/rbenv
+export PATH=$HOME/Library/Python/2.7/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 source $HOME/.zshenv
-
-. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+source $HOME/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
 setopt INC_APPEND_HISTORY
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
-#source ./plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source ./plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 eval "$(rbenv init -)"
