@@ -50,16 +50,20 @@ export PATH=/usr/local/opt/rbenv/shims:/usr/local/opt/rbenv/bin:$PATH
 # HELPDIR=/usr/local/share/zsh/helpfiles
 
 export RBENV_ROOT=/usr/local/var/rbenv
-export PATH=$HOME/Library/Python/2.7/bin:$PATH
+export PATH=$(brew --prefix)/lib/python2.7/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export NVM_DIR=~/.nvm
 
 source $HOME/.zshenv
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 source $(brew --prefix nvm)/nvm.sh
+source $(brew --prefix)/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 setopt INC_APPEND_HISTORY
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+fpath=($HOME/.tmuxinator/completion ${fpath})
+autoload -U compinit
+compinit
 
 eval "$(rbenv init -)"

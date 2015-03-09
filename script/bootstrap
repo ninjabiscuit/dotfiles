@@ -122,9 +122,10 @@ install_dotfiles () {
 
 install_powerline () {
   info "installing powerline"
-  pip install --user git+git://github.com/Lokaltog/powerline
+  pip install git+git://github.com/Lokaltog/powerline
   rsync --exclude ".DS_Store" -av --no-perms fonts/ ~/Library/Fonts/
-  link_files ./powerline ~/.config/powerline
+  mkdir -p ~/.config
+  link_files ~/.dotfiles/powerline ~/.config/powerline
 }
 
 setup_gitconfig
