@@ -5,14 +5,19 @@ if (( $+commands[hub] ))
 then
   alias git=$hub_path
 fi
+alias __git-checkout_main=_git_checkout
 
 # The rest of my fun git aliases
+alias g='git'
 alias gl='git pull --prune'
 alias ga='git add'
 alias gall='git-all'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gp='git push origin HEAD'
+gpo() { git push origin $1 }
+glo() { git pull origin $1 }
 alias gd='git diff'
+gdv() { git diff -w "$@" | view - }
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'

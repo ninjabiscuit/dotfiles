@@ -151,6 +151,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" dont yank 
+vnoremap p "_dP
+
 "" fix problem with esc key delay?
 "set noesckeys
 "noremap <Esc> <Esc>
@@ -169,6 +172,7 @@ python del powerline_setup
 set laststatus=2
 
 set encoding=utf-8
+au BufNewFile,BufRead *.ejs set filetype=html
 
 " Unite
 let g:unite_source_history_yank_enable = 1
@@ -179,7 +183,17 @@ nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file
 nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
 nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
-nnoremap <leader>/ :Unite grep:.<cr>
+nnoremap <leader>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <leader>uc :<C-u>UniteClose<CR>
+
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_grep_encoding = 'utf-8'
+endif
+
+nnoremap <leader>; :<C-u>%s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
 
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
