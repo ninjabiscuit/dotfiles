@@ -8,4 +8,4 @@
   brew cask list | while read item; do echo "cask install $item"; done
 
   echo "cleanup";
-} >> Brewfile
+} > Brewfile
