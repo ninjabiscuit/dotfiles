@@ -1,0 +1,45 @@
+#!/bin/sh
+
+usage() {
+cat <<-EOF
+Usage:       -i [input-file.jpg] -c [colour] -o [output-file.jpg]
+Description: Colorize an image!
+EOF
+}
+
+if [[ $# -eq 0 ]]
+then
+  usage
+  exit 1
+fi
+
+COLOR="#db5131"
+
+while getopts ":i:c:o:" o; do
+  case "${o}" in
+    i)
+      INPUT=${OPTARG}
+      ;;
+    o)
+      OUTPUT=${OPTARG}
+      ;;
+    c)
+      COLOR=${OPTARG}
+      ;;
+    *)
+      usage
+      exit 1
+      ;;
+  esac
+done
+
+if ! [[ -n "$INPUT" ]]; then
+  echo "input file must be specified"
+  exit 1
+fi
+
+if [[ -z "$OUTPUT" ]]; then
+  OUTPUT="$INPUT"
+fi
+
+convert "$INPUT" -colorspace Gray +level-colors ,"$COLOR" "$OUTPUT"

@@ -6,6 +6,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias bc='bc -l'
 alias browse='open -a "Google Chrome"'
+alias greyscale='grayscale'
+alias dotfiles='cd ~/.dotfiles && vim'
+alias vagrant-rails 'vagrant ssh -c "cd /vagrant && bundle exec rails s"'
 
 #directories
 alias clients='cd ~/Sites/clients/'

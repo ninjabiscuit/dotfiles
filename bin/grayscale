@@ -1,0 +1,28 @@
+#!/bin/sh
+
+usage() {
+cat <<-EOF
+Usage:       input-file.jpg [output-file.jpg]
+Description: Change image to grey scale 
+EOF
+}
+
+if [[ $# -eq 0 ]]
+then
+  usage
+  exit 1
+fi
+
+INPUT="$1"
+OUTPUT="$2"
+
+if ! [[ -n "$INPUT" ]]; then
+  echo "input file must be specified"
+  exit 1
+fi
+
+if [[ -z "$OUTPUT" ]]; then
+  OUTPUT="$INPUT"
+fi
+
+convert "$INPUT" -colorspace gray "$OUTPUT"

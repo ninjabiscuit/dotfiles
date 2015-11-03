@@ -1,21 +1,56 @@
 #!/bin/sh
-#
-# Quick shortcut to an editor.
-#
-# This means that as I travel back and forth between editors, hey, I don't have
-# to re-learn any arcane commands. Neat.
-#
-# USAGE:
-#
-#   $ e
-#   # => opens the current directory in your editor
-#
-#   $ e .
-#   $ e /usr/local
-#   # => opens the specified directory in your editor
 
-if [ "$1" = "" ] ; then
-  exec $EDITOR .
-else
-  exec $EDITOR "$1"
+usage() {
+cat <<-EOF
+Usage:       -i [input-file.jpg] -w [width] -h [height] -g [gravity] -o [output-file.jpg]
+Description: Crop and resize an image
+EOF
+}
+
+if [[ $# -eq 0 ]]
+then
+  usage
+  exit 1
 fi
+
+HEIGHT=""
+GRAVITY="center"
+
+while getopts ":i:w:h:g:o:" o; do
+  case "${o}" in
+    i)
+      INPUT=${OPTARG}
+      ;;
+    o)
+      OUTPUT=${OPTARG}
+      ;;
+    w)
+      WIDTH=${OPTARG}
+      ;;
+    h)
+      HEIGHT=${OPTARG}
+      ;;
+    g)
+      GRAVITY=${OPTARG}
+      ;;
+    *)
+      usage
+      exit 1
+      ;;
+  esac
+done
+
+if ! [[ -n "$WIDTH" || -n "$1" ]]; then
+  echo "input file and width must be specified"
+  exit 1
+fi
+
+if [[ -z "$HEIGHT" ]]; then
+  HEIGHT="$WIDTH"
+fi
+
+if [[ -z "$OUTPUT" ]]; then
+  OUTPUT="$INPUT"
+fi
+
+convert "${INPUT}" -resize "${WIDTH}"x"${HEIGHT}"^ -gravity "${GRAVITY}" -extent "${WIDTH}"x"${HEIGHT}" "${OUTPUT}"
