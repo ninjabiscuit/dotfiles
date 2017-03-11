@@ -1,69 +1,25 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
+source "$ZSH/zsh/slimzsh/slim.zsh"
+
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Sites
+export PROJECTS=~/sites
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
+fpath=($ZSH/functions $fpath)
+autoload -U $ZSH/functions/*(:t)
 
-# all of our zsh files
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
-
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
-
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-  source $file
-done
-
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
-
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
-
-unset config_files
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-export PATH=$HOME/Development/adt-bundle-mac-x86_64-20131030/sdk/tools:$HOME/Development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:$PATH
-export PATH=/usr/local/opt/rbenv/shims:/usr/local/opt/rbenv/bin:$PATH
-
-# unalias run-help
-# autoload run-help
-# HELPDIR=/usr/local/share/zsh/helpfiles
-
-export RBENV_ROOT=/usr/local/var/rbenv
-export PATH=$(brew --prefix)/lib/python2.7/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export NVM_DIR=~/.nvm
-
+source "$ZSH/zsh/aliases.zsh"
+source "$ZSH/zsh/path.zsh"
+source "$ZSH/xcode/aliases.zsh"
+source "$ZSH/system/aliases.zsh"
+source "$ZSH/system/env.zsh"
+source "$ZSH/system/path.zsh"
+source "$ZSH/ruby/aliases.zsh"
+source "$ZSH/git/aliases.zsh"
 source $HOME/.zshenv
-source $(brew --prefix nvm)/nvm.sh
-source $(brew --prefix)/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-
-setopt INC_APPEND_HISTORY
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
-fpath=($HOME/.tmuxinator/completion ${fpath})
-autoload -U compinit
-compinit
 
 eval "$(rbenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

@@ -53,4 +53,4 @@ if [[ -z "$OUTPUT" ]]; then
   OUTPUT="$INPUT"
 fi
 
-convert "${INPUT}" -resize "${WIDTH}"x"${HEIGHT}"^ -gravity "${GRAVITY}" -extent "${WIDTH}"x"${HEIGHT}" "${OUTPUT}"
+convert "${INPUT}" -resize "${WIDTH}"x"${HEIGHT}"^ -gravity "${GRAVITY}" -extent "${WIDTH}"x"${HEIGHT}" -background none "${OUTPUT}"

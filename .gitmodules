@@ -64,3 +64,24 @@
 [submodule "vim/bundle/vim-angular"]
 	path = vim/bundle/vim-angular
 	url = https://github.com/burnettk/vim-angular.git
+[submodule "vim/bundle/vim-erlang-runtime"]
+	path = vim/bundle/vim-erlang-runtime
+	url = https://github.com/vim-erlang/vim-erlang-runtime
+[submodule "vim/bundle/vim-phoenix"]
+	path = vim/bundle/vim-phoenix
+	url = https://github.com/avdgaag/vim-phoenix.git
+[submodule "vim/bundle/vim-elixir"]
+	path = vim/bundle/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "vim/bundle/lightline.vim"]
+	path = vim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "zsh/slimzsh"]
+	path = zsh/slimzsh
+	url = https://github.com/changs/slimzsh.git
