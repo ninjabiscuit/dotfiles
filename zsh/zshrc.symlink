@@ -1,6 +1,7 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
+source $HOME/.zshenv
 source "$ZSH/zsh/slimzsh/slim.zsh"
 
 # your project folder that we can `c [tab]` to
@@ -17,7 +18,6 @@ source "$ZSH/system/env.zsh"
 source "$ZSH/system/path.zsh"
 source "$ZSH/ruby/aliases.zsh"
 source "$ZSH/git/aliases.zsh"
-source $HOME/.zshenv
 
 eval "$(rbenv init -)"
 

@@ -13,4 +13,3 @@ export PATH=/usr/local/bin:$PATH
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export NVM_DIR=~/.nvm
 
-source $HOME/.zshenv

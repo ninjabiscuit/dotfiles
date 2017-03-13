@@ -242,12 +242,13 @@ endif
 
 " FZF Options
 """""""""""""
-
+set rtp+=/usr/local/opt/fzf
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+  \ 'ctrl-v': 'vsplit'
+  \ }
 
 
 " Customize fzf colors to match your color scheme
@@ -263,7 +264,14 @@ let g:fzf_colors =
   \ 'pointer': ['fg', 'Exception'],
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+  \ 'header':  ['fg', 'Comment'] 
+  \ }
+
+" [Files] Extra options for fzf
+"   e.g. File preview using Highlight
+"        (http://www.andre-simon.de/doku/highlight/en/highlight.html)
+let g:fzf_files_options =
+  \ '--preview "(highlight -O ansi {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
 function! s:fzf_statusline()
   " Override statusline as you like
@@ -273,5 +281,46 @@ function! s:fzf_statusline()
   setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
 endfunction
 
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
+nnoremap <silent> <leader><space> :Files<CR>
+nnoremap <silent> <leader>a :Buffers<CR>
+nnoremap <silent> <leader>A :Windows<CR>
+nnoremap <silent> <leader>; :BLines<CR>
+nnoremap <silent> <leader>o :BTags<CR>
+nnoremap <silent> <leader>O :Tags<CR>
+nnoremap <silent> <leader>? :History<CR>
+nnoremap <silent> <leader>/ :execute 'pt ' . input('pt/')<CR>
+nnoremap <silent> <leader>. :AgIn 
+
+nnoremap <silent> K :call SearchWordWithAg()<CR>
+vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
+nnoremap <silent> <leader>gl :Commits<CR>
+nnoremap <silent> <leader>ga :BCommits<CR>
+nnoremap <silent> <leader>ft :Filetypes<CR>
+
+imap <C-x><C-f> <plug>(fzf-complete-file-ag)
+imap <C-x><C-l> <plug>(fzf-complete-line)
+
+function! SearchWordWithAg()
+  execute 'Ag' expand('<cword>')
+endfunction
+
+function! SearchVisualSelectionWithAg() range
+  let old_reg = getreg('"')
+  let old_regtype = getregtype('"')
+  let old_clipboard = &clipboard
+  set clipboard&
+  normal! ""gvy
+  let selection = getreg('"')
+  call setreg('"', old_reg, old_regtype)
+  let &clipboard = old_clipboard
+  execute 'Ag' selection
+endfunction
+
+function! SearchWithAgInDirectory(...)
+  call fzf#vim#ag(join(a:000[1:], ' '), extend({'dir': a:1}, g:fzf#vim#default_layout))
+endfunction
+command! -nargs=+ -complete=dir AgIn call SearchWithAgInDirectory(<f-args>)
