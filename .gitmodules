@@ -85,3 +85,9 @@
 [submodule "zsh/slimzsh"]
 	path = zsh/slimzsh
 	url = https://github.com/changs/slimzsh.git
+[submodule "vim/bundle/-f"]
+	path = vim/bundle/-f
+	url = https://github.com/dyng/ctrlsf.vim.git
+[submodule "vim/bundle/ctrlsf.vim"]
+	path = vim/bundle/ctrlsf.vim
+	url = https://github.com/dyng/ctrlsf.vim.git

@@ -134,6 +134,8 @@ let g:ragtag_global_maps = 1
 nmap <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>h :nohl<CR>
 
+"map <leader>f :Ranger<CR>
+
 set clipboard=unnamed
 
 set background=dark
@@ -301,11 +303,15 @@ nnoremap <silent> <leader>gl :Commits<CR>
 nnoremap <silent> <leader>ga :BCommits<CR>
 nnoremap <silent> <leader>ft :Filetypes<CR>
 
+nmap     <C-F> <Plug>CtrlSFPrompt
+let g:ctrlsf_ackprg = 'pt'
+
 imap <C-x><C-f> <plug>(fzf-complete-file-ag)
 imap <C-x><C-l> <plug>(fzf-complete-line)
 
+
 function! SearchWordWithAg()
-  execute 'Ag' expand('<cword>')
+  execute 'Pt' expand('<cword>')
 endfunction
 
 function! SearchVisualSelectionWithAg() range
