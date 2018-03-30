@@ -1,4 +1,5 @@
 alias reload!='. ~/.zshrc'
+<<<<<<< HEAD
 alias acurl='curl $1 -H "Accept: $2"'
 alias myip='ipconfig getifaddr en0'
 alias grep='grep --color=auto'
@@ -17,3 +18,7 @@ alias find-process='ps ax | grep $1'
 alias chrome-without-cors='open -a Google\ Chrome --args --disable-web-security'
 alias -g sd='; afplay ~/Dropbox\ \(Personal\)/program-complete.wav'
 
+=======
+
+alias cls='clear' # Good 'ol Clear Screen command
+>>>>>>> upstream/master
