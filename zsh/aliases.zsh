@@ -8,13 +8,8 @@ alias bc='bc -l'
 alias browse='open -a "Google Chrome"'
 alias greyscale='grayscale'
 alias dotfiles='cd ~/.dotfiles && vim'
-alias vagrant-rails 'vagrant ssh -c "cd /vagrant && bundle exec rails s"'
 alias vim='nvim'
 
 #directories
-alias clients='cd ~/Sites/clients/'
-alias elasticsearch-head='browse ~/src/elasticsearch-head/index.html'
 alias find-process='ps ax | grep $1'
-alias chrome-without-cors='open -a Google\ Chrome --args --disable-web-security'
-alias -g sd='; afplay ~/Dropbox\ \(Personal\)/program-complete.wav'
-
+alias cls='clear' # Good 'ol Clear Screen command

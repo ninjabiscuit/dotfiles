@@ -1,9 +1,9 @@
-# Sets reasonable OS X defaults.
+# Sets reasonable macOS defaults.
 #
-# Or, in other words, set shit how I like in OS X.
+# Or, in other words, set shit how I like in macOS.
 #
 # The original idea (and a couple settings) were grabbed from:
-#   https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+#   https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
@@ -20,7 +20,7 @@ defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 chflags nohidden ~/Library
 
 # Set a really fast key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 1
 
 # Set the Finder prefs for showing a few different volumes on the Desktop.
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -67,7 +67,7 @@ defaults write com.apple.BezelServices kDimTime -int 300
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
+defaults write NSGlobalDomain AppleLanguages -array "en"
 defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=GBP"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
@@ -151,38 +151,3 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-###############################################################################
-# Twitter.app                                                                 #
-###############################################################################
-
-# Open links in the background
-defaults write com.twitter.twitter-mac openLinksInBackground -bool true
-
-# Allow closing the ‘new tweet’ window by pressing `Esc`
-defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
-
-# Show full names rather than Twitter handles
-defaults write com.twitter.twitter-mac ShowFullNames -bool true
-
-# Hide the app in the background if it’s not the front-most window
-defaults write com.twitter.twitter-mac HideInBackground -bool true
-
-# keyboard shortcuts
-# modifier key legend:
-#  @ = command
-#  ^ = control
-#  ~ = option
-#  $ = shift
-###### NOTE: These shortcuts will not show in System Preferences
-######       and setting new shortcuts there will overwrite these
-# all applications
-# change tabs with cmd-opt-arrow
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Select Next Tab"     "@~\U2192"
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Select Previous Tab" "@~\U2190"
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Next Tab"            "@~\U2192"
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Previous Tab"        "@~\U2190"
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Show Next Tab"       "@~\U2192"
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Show Previous Tab"   "@~\U2190"
-
-# Make the caps lock key act as control
-osascript ~/.dotfiles/osx/capslock-to-control.scpt
