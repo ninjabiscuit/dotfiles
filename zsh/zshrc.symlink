@@ -2,7 +2,7 @@
 export ZSH=$HOME/.dotfiles
 
 source $HOME/.zshenv
-source "$ZSH/zsh/slimzsh/slim.zsh"
+source "~/.dotfiles/zsh/slimzsh/"
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
