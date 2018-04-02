@@ -22,6 +22,7 @@ source "$ZSH/git/aliases.zsh"
 # Virtualenv/VirtualenvWrapper
 source /usr/local/bin/virtualenvwrapper.sh
 
+export RBENV_ROOT=/usr/local/var/rbenv
 eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

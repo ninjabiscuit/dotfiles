@@ -9,6 +9,7 @@ alias browse='open -a "Google Chrome"'
 alias greyscale='grayscale'
 alias dotfiles='cd ~/.dotfiles && vim'
 alias vagrant-rails 'vagrant ssh -c "cd /vagrant && bundle exec rails s"'
+alias vim='nvim'
 
 #directories
 alias clients='cd ~/Sites/clients/'
