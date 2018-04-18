@@ -137,8 +137,20 @@ install_dotfiles () {
   done
 }
 
+setup_nvim () {
+  info 'setup nvim'
+
+  local overwrite_all=false backup_all=false skip_all=false
+
+  sudo chown $USER ~/.config
+  mkdir -p ~/.config/nvim/
+  link_file $DOTFILES_ROOT/nvim/init.vim ~/.config/nvim/init.vim
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+}
+
 setup_gitconfig
 install_dotfiles
+setup_nvim
 
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]

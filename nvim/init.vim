@@ -1,15 +1,42 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+" System
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'mklabs/split-term.vim'
+Plug 'mileszs/ack.vim'
+
+" Syntaxes
+Plug 'leshill/vim-json'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'evanmiller/nginx-vim-syntax'
+Plug 'elixir-lang/vim-elixir'
+Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+
+" Colours
 Plug 'joshdick/onedark.vim'
+
+" Stuff
+Plug 'mgutz/vim-colors'
+Plug 'bling/vim-airline'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-set encoding=utf-8
-scriptencoding utf-8
+"" Fonts
+let g:airline_powerline_fonts = 1
+
+if has('gui_running')
+  set guioptions=-t
+  let g:Powerline_symbols = 'fancy'
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+endif
 
 "" Basic
+scriptencoding utf-8
 set nocompatible
 syntax enable
 set encoding=utf-8

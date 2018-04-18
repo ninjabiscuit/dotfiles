@@ -2,13 +2,34 @@
 
 ## install
 
-Run this:
+Install Homebrew:
+
+```sh
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Install Git
+
+```sh
+brew install git
+```
+
+Switch to ZSH
+
+```sh
+sudo echo "$(which zsh)" >> /etc/shells
+chsh -s $(which zsh)
+```
+
+Clone the dotfiles:
 
 ```sh
 git clone https://github.com/ninjabiscuit/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
+./bin/dot
 ```
+
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
 Everything is configured and tweaked within `~/.dotfiles`.
