@@ -9,6 +9,7 @@ alias browse='open -a "Google Chrome"'
 alias greyscale='grayscale'
 alias dotfiles='cd ~/.dotfiles && vim'
 alias vim='nvim'
+alias dc= 'docker-compose $*'
 
 #directories
 alias find-process='ps ax | grep $1'

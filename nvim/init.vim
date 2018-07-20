@@ -21,7 +21,7 @@ Plug 'joshdick/onedark.vim'
 " Stuff
 Plug 'mgutz/vim-colors'
 Plug 'bling/vim-airline'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
