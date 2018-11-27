@@ -26,7 +26,6 @@ Clone the dotfiles:
 ```sh
 git clone https://github.com/ninjabiscuit/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-script/bootstrap
 ./bin/dot
 ```
 
