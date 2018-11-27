@@ -24,7 +24,7 @@ chsh -s $(which zsh)
 Clone the dotfiles:
 
 ```sh
-git clone https://github.com/ninjabiscuit/dotfiles.git ~/.dotfiles
+git clone --recurse-submodules -j8 https://github.com/ninjabiscuit/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ./bin/dot
 ```
