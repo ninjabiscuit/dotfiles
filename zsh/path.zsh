@@ -10,6 +10,7 @@ export PATH=$PATH:$GOPATH/bin
 
 #export RBENV_ROOT=/usr/local/var/rbenv
 export PATH=/usr/local/lib/python2.7/bin:$PATH
+export PATH=/Users/andrewwalker/Library/Python/2.7/bin:$PATH
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export NVM_DIR=~/.nvm
 
