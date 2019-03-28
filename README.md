@@ -26,6 +26,7 @@ Clone the dotfiles:
 ```sh
 git clone --recurse-submodules -j8 https://github.com/ninjabiscuit/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+./script/bootstrap
 ./bin/dot
 ```
 
