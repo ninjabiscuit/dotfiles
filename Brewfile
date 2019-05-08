@@ -34,6 +34,7 @@ brew 'git'
 brew 'awscli'
 brew 'fzf'
 brew 'pyenv-virtualenvwrapper'
+brew 'assume-role'
 
 cask '1password'
 cask 'google-chrome'
